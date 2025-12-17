@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            height: 30vh;
+            width: 70%;
+        }
+
+        .prod-img {
+            height: 30vh;
+            width: 20%;
+            float: left;
+        }
+
+        .prod-detail {
+            height: 30vh;
+            width: 59%;
+            float: left;
+
+
+        }
+
+        .prod-price {
+            height: 30vh;
+            width: 20%;
+            float: right;
+
+        }
+
+        .prod-img img {
+            height: 60%;
+            width: 60%;
+            margin: 30px 30px;
+        }
+
+        #main {
+
+            width: 100%;
+            position: relative;
+        }
+
+        #sub1 {
+
+            width: 15%;
+            position: absolute;
+        }
+
+        #sub2 {
+
+            width: 77%;
+            position: absolute;
+            margin-left: 250px ;
+
+        }
+
+        #myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+#head{
+height: 8vh;
+width: 100%;
+background-color: rgb(14, 143, 186);
+}
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="head"><img height="80%" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png"></div>
+        <div id="sub1"><ul id="myUL">
+  <li><a href="#">Adele</a></li>
+  <li><a href="#">Agnes</a></li>
+
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+</ul></div>
+        <div id="sub2"></div>
+
+    </div>
+</body>
+
+<script>
+    const products = [
+        {
+            "id": 1,
+            "productName": "Apple iPhone 16 (Black, 128 GB)",
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/n/q/h/-original-imahgfmzjj8gtqbc.jpeg?q=70",
+            "price": " ₹69,900",
+            "offer": "Upto ₹57,400 Off on Exchange",
+            "offer2": "Bank Offer",
+            "productDetail": "15.49 cm (6.1 inch) Super Retina XDR Display",
+            "productDetail2": "48MP + 12MP | 12MP Front Camera  A18 Chip, 6 Core Processor Processor"
+        },
+        {
+            "id": 2,
+            "productName": "Apple iPhone 16 (Black, 128 GB)",
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/o/l/2/-original-imahgfmzvanpgncf.jpeg?q=70",
+            "price": " ₹69,900",
+            "offer": "Upto ₹57,400 Off on Exchange",
+            "offer2": "Bank Offer",
+            "productDetail": "15.49 cm (6.1 inch) Super Retina XDR Display",
+            "productDetail2": "48MP + 12MP | 12MP Front Camera  A18 Chip, 6 Core Processor Processor"
+        },
+        {
+            "id": 3,
+            "productName": "Apple iPhone 16 (Black, 128 GB)",
+            "image": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg?q=70",
+            "price": " ₹69,900",
+            "offer": "Upto ₹57,400 Off on Exchange",
+            "offer2": "Bank Offer",
+            "productDetail": "15.49 cm (6.1 inch) Super Retina XDR Display",
+            "productDetail2": "48MP + 12MP | 12MP Front Camera  A18 Chip, 6 Core Processor Processor"
+        }
+    ]
+
+let alldata='';
+    for (product in products) {
+        let data =
+        (`<div class="card">
+        <div class="prod-img"><img
+                src="${products[product].image}"
+                alt="sample"></div>
+        <div class="prod-detail"> <ul><li><b>${products[product].productName}  </b></li>
+          
+            
+      <li>  ${products[product].productDetail}</li>
+       <li>     ${products[product].productDetail2}</li>
+</ul>
+               </div>
+        <div class="prod-price">
+            <ul><li><b>  ${products[product].price}</b></li>
+            
+           <li> ${products[product].offer}</li>
+           <li> ${products[product].offer2}</li>
+            </ul>
+        </div>
+    </div><hr>`)
+    alldata+=data;
+    }
+    document.getElementById("sub2").innerHTML=alldata;
+
+
+</script>
+
+</html>
